@@ -1,2 +1,3 @@
-# QueriaTMX
-A tool to parse TMX files and provide a simple searchable UI.
+Run Command:
+
+    php -d memory_limit=-1 bin/console parse_tmx

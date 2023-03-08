@@ -1,0 +1,5 @@
+server {
+    server_name DOMAIN DOT COM;
+    root /home/user???/site/path/public;
+    include /etc/nginx/sites-available/common;
+}
