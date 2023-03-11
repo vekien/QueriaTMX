@@ -9,7 +9,7 @@ To simplify the usage of this, PHP and all composer libraries are included.
 1. Clone the project: `git@github.com:vekien/QueriaTMX.git`
 2. Place your files inside the `tmx` folder
 3. Open Command Prompt at the folder of this project
-4. Import your TMX: `.\php\php.exe bin/console parse_tmx`
+4. Import your TMX: `.\php\php.exe -d memory_limit-1 bin/console parse_tmx`
 5. Start the project: `.\php\php.exe -S localhost:8000 public/index.php`
 6. Navigate to: http://localhost:8000/
 
