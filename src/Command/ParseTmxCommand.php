@@ -36,8 +36,11 @@ class ParseTmxCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $folder = __DIR__ .'/../../tmx/';
-        $files = array_diff(scandir($folder), ['.', '..']);
-    
+        $files = array_values(array_diff(scandir($folder), ['.', '..']));
+
+        $output->writeln("Importing TMX files...");
+        $imported = 0;
+
         // wipe current db
         $this->truncateTable();
         
@@ -116,7 +119,10 @@ class ParseTmxCommand extends Command
             
             // delete .json file
             unlink($file . ".json");
+            $imported++;
         }
+
+        $output->writeln("{$imported} imported tmx files.");
     }
     
     private function truncateTable()
