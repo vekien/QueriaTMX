@@ -120,6 +120,9 @@ class ParseTmxCommand extends Command
             
             // delete .json file
             unlink($file . ".json");
+
+            // track processed file
+            file_put_contents(__DIR__ . '/../../processed-files.txt', $filename . PHP_EOL, FILE_APPEND);
         }
     }
 }
